@@ -17,4 +17,39 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 배열안에 두개의 값을 더해서 target이 되게 만들어라
 '''
+
+'''
 from typing import List
+class Solution:
+    nums    = [2,7,11,15]
+    target  = 9
+    print(nums)
+    # Why does the "self" element exist?
+    def twoSum(self, nums : List[int], target : int): 
+        lnums = len(nums)
+        for i in range(lnums):
+            for j in range(i+1, lnums):
+                if nums[i] + nums[j] == target:
+                    return[i,j]
+        return []
+    
+    aResult = twoSum(1,[2,7,11,15], 9)
+    print(aResult)
+'''
+from typing import List
+class Solution:
+    # nums = [2,7,11,15]
+    # target = 9
+    def twoSum(self, nums : List[int], target : int):
+        print('test')
+        hNums = {}
+        for i in range(len(nums)):
+            if target - nums[i] not in hNums:
+                hNums[nums[i]] = i 
+            else:
+                return [hNums[target - nums[i]], i]
+        return []
+    
+    result = twoSum(1, [2,7,11,15], 9)
+    print(result)
+    
